@@ -32,6 +32,11 @@ public class DodgemTest {
         customer = new Customer(12, 110, 50.00);
         assertEquals(false, dodgem.checkCanRide(customer));
     }
+    @Test
+    public void customerTooPoor(){
+        customer = new Customer(12, 180, 00.0);
+        assertEquals(false, dodgem.checkCanRide(customer));
+    }
 
 
 }

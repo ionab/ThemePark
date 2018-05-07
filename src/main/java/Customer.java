@@ -2,6 +2,7 @@ public class Customer {
     private int age;
     private int height;
     private double money;
+    Customer customer;
 
     public Customer(int age, int height, double money) {
         this.age = age;
@@ -24,5 +25,11 @@ public class Customer {
     public void setMoney(double money) {
         this.money = money;
     }
+
+    public void payforRide(Ride ride){
+        this.money -= ride.getPrice();
+
+    }
+
 
 }

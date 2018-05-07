@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CustomerTest {
     Customer customer;
+    Rollercoaster rollercoaster;
 
 
     @Before
@@ -27,10 +28,11 @@ public class CustomerTest {
         assertEquals(40.0, customer.getMoney(), 0.01);
     }
 
-//    @Test
-//    public void canPayMoney(){
-//        customer.ride();
-//        assertEquals(37.50, customer.getMoney(), 0.01);
-//    }
+    @Test
+    public void canPayMoney(){
+        rollercoaster = new Rollercoaster(7.00, 165);
+        customer.payforRide(rollercoaster);
+        assertEquals(33.00, customer.getMoney(), 0.01);
+    }
 
 }
