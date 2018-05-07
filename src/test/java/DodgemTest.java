@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class DodgemTest {
     Dodgem dodgem;
+    Customer customer;
 
 
     @Before
@@ -20,6 +21,16 @@ public class DodgemTest {
     @Test
     public void canGetMinHeight(){
         assertEquals(120, dodgem.getMin_height());
+    }
+    @Test
+    public void customerCanRide(){
+        customer = new Customer(12, 180, 50.0);
+        assertEquals(true, dodgem.checkCanRide(customer));
+    }
+    @Test
+    public void customerTooShort(){
+        customer = new Customer(12, 110, 50.00);
+        assertEquals(false, dodgem.checkCanRide(customer));
     }
 
 

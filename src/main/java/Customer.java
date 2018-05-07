@@ -24,4 +24,5 @@ public class Customer {
     public void setMoney(double money) {
         this.money = money;
     }
+
 }

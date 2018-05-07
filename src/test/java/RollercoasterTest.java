@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class RollercoasterTest {
     Rollercoaster rollercoaster;
+    Customer customer;
 
 
     @Before
@@ -21,4 +22,22 @@ public class RollercoasterTest {
     public void canGetMinHeight(){
         assertEquals(120, rollercoaster.getMin_height());
     }
+
+    @Test
+    public void customerCanRide(){
+        customer = new Customer(12, 180, 50.0);
+        assertEquals(true, rollercoaster.checkCanRide(customer));
+    }
+    @Test
+    public void customerTooShort(){
+        customer = new Customer(12, 110, 50.00);
+        assertEquals(false, rollercoaster.checkCanRide(customer));
+    }
+    @Test
+    public void customerTooPoor(){
+        customer = new Customer(12, 180, 00.0);
+        assertEquals(false, rollercoaster.checkCanRide(customer));
+    }
+
+
 }
