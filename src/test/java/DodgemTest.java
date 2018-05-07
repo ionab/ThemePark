@@ -3,21 +3,24 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class FerrisWheelTest {
-    FerrisWheel ferrisWheel;
+public class DodgemTest {
+    Dodgem dodgem;
+
 
     @Before
     public void before(){
-        ferrisWheel = new FerrisWheel(3.50, 120);
+        dodgem = new Dodgem(3.50, 120);
     }
 
     @Test
     public void canGetPrice(){
-        assertEquals(3.50, ferrisWheel.getPrice(), 0.01);
+        assertEquals(3.50, dodgem.getPrice(), 0.01);
     }
+
     @Test
     public void canGetMinHeight(){
-        assertEquals(120, ferrisWheel.getMin_height());
+        assertEquals(120, dodgem.getMin_height());
     }
+
 
 }
